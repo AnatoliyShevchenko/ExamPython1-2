@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <form action="/posts/add" method="post">
+        <input type="text" placeholder="Введите название поста" name="about" id="about">
+        <input type="text" placeholder="Введите пост" name="text" id="text">
+        <input type="submit" name="button" id="button">
+    </form>
+    {% for i in posts %}
+    {% for j in posts[i] %}
+    <h2>{{i}}</h2>
+    <h3>{{j}}</h3> 
+    <h4>Автор поста: {{(' ').join(posts[i][j])}}</h4>
+    {% endfor %}
+    {% endfor %}
+</body>
+</html>
